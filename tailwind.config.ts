@@ -8,9 +8,19 @@ export default {
   ],
   theme: {
     extend: {
+
+      fontFamily: {
+        sans: ['var(--font-noto-sans-jp)'],
+      },
+
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "var(--color-primary)",
+        impact: "var(--color-impact)",
+        secondary: "var(--color-secondary)",
+        typo: "var(--color-typo)",
+
       },
     },
   },
