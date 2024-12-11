@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({ id, title, image, year, mode}) => {
                     width={width}
                     src={image}
                     alt={title}
-                    className="rounded-sm shadow-md"
+                    className="rounded-md"
                     loading="lazy"
                 />
             </div>

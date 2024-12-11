@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, useTransform, useScroll } from 'motion/react';
-import { useRef } from 'react';
+import { motion, useTransform, useScroll, useSpring } from 'motion/react';
+import { useRef, useEffect } from 'react';
 import Card from './Components/Card';
+import HorizontalScroll from './Components/HorizontalScroll';
 
 const dummyData = [
   {
@@ -50,9 +51,17 @@ const dummyData = [
 
 export default function Home() {
   const targetRef = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({target:targetRef,});
+  const { scrollYProgress } = useScroll({target:targetRef});
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-95%"]);
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  
   return (
     <>
     <main className="ml-20">
@@ -75,10 +84,14 @@ export default function Home() {
         </motion.div>
       </div>
      </section>
-     <div className='mt-10 fixed bottom-10 left-40'>
-      <p className='tracking-widest text-lg'>
-        Loading bar todo
-      </p>
+     <div className='mt-10 fixed bottom-12 left-40 w-1/6'>
+      <div className="relative w-full h-2 rounded-md bg-primary opacity-50">
+          <motion.div
+              className="absolute h-full bg-impact opacity-100 rounded-md origin-left"
+              style={{ scaleX }}
+          >
+          </motion.div>
+      </div>
      </div>
     </main>
     </>
