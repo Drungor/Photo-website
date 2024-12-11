@@ -14,7 +14,7 @@ const NavBar = () => {
 
     return (
         <nav>
-            <ul className="flex gap-4 p-2 pr-0 font-bold">
+            <ul className="flex gap-4 p-2 pr-0 font-bold tracking-widest">
                 {navItems.map((item) => (
                     <li key={item.label}>
                         <a

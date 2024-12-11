@@ -31,10 +31,10 @@ export default function RootLayout({
           writing-mode: horizontal-tb; 
         </style>
       </head>
-      <body className=" mx-20">
-      <Header />
+      <body className="mx-20 relative">
+      <Header className="sticky top-16" />
         {children}
-        <Footer />
+      <Footer />
       </body>
     </html>
   );
