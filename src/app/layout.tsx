@@ -3,6 +3,7 @@ import "./globals.css";
 import { Noto_Sans_JP } from 'next/font/google'
 import clsx from 'clsx'
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className=" mx-20">
       <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
