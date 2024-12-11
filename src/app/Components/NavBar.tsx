@@ -1,9 +1,10 @@
 "use client";
 
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 const NavBar = () => {
     const router = useRouter();
+    const pathname = usePathname();
 
     const navItems = [
         { label: 'ワークス', path: '/' },
@@ -18,7 +19,7 @@ const NavBar = () => {
                     <li key={item.label}>
                         <a
                             href={item.path}
-                            className={router.pathname === item.path ? 'text-typo' : 'text-secondary'}
+                            className={pathname === item.path ? 'text-typo' : 'text-secondary'}
                         >
                             {item.label}
                         </a>
