@@ -1,38 +1,71 @@
 
-const project = [
+ const imageData = [
     { 
-    id:1, 
-    title: 'Country side', 
-    CarrouselImage: '/carrousel-pictures/craftbeer.jpg', 
-    link: 'https://www.google.com' },
-    {
-    id:2,
-    title: 'Sunset',
-    CarrouselImage: '/carrousel-pictures/sunset.jpg',
-    link: 'https://www.google.com'
-    },
-    {
-    id:3,
-    title: 'Craft beer',
-    CarrouselImage: 'project3.jpg',
-    link: 'https://www.google.com'
-    },
-    {
-    id:4,
-    title: 'City lights',
-    CarrouselImage: 'project4.jpg',
-    link: 'https://www.google.com'
-    },
-    {
-    id:5,
-    title: 'Lost',
-    CarrouselImage: 'project5.jpg',
-    link: 'https://www.google.com'
-    },
-    {
-    id:6,
-    title: 'Coffee',
-    CarrouselImage: 'project6.jpg',
-    link: 'https://www.google.com'
-    }
+    
+        id: 1,
+        title: 'Country side',
+        CarrouselImage: '/carrousel-pictures/temple.jpg',
+        link: 'https://www.google.com',
+        year: '2021',
+        mode: 'portrait',
+        gallery: [],
+      },
+      {
+        id: 2,
+        title: 'New Zealand',
+        CarrouselImage: '/carrousel-pictures/nz-landscape.jpg',
+        link: 'https://www.google.com',
+        year: '2021',
+        mode: 'landscape',
+      },
+      {
+        id: 3,
+        title: 'Work',
+        CarrouselImage: '/carrousel-pictures/seaside-japan.jpg',
+        link: 'https://www.google.com',
+        year: '2021',
+        mode: 'portrait',
+      },
+      {
+        id: 4,
+        title: 'Work',
+        CarrouselImage: '/carrousel-pictures/nara.jpg',
+        link: 'https://www.google.com',
+        year: '2021',
+        mode: 'portrait',
+      },
+      {
+        id: 5,
+        title: 'Work',
+        CarrouselImage: '/carrousel-pictures/coffee.jpg',
+        link: 'https://www.google.com',
+        year: '2021',
+        mode: 'portrait',
+      },
+      {
+        id: 6,
+        title: 'Work',
+        CarrouselImage: '/carrousel-pictures/coffee.jpg',
+        link: 'https://www.google.com',
+        year: '2021',
+        mode: 'portrait',
+      },
+      {
+        id: 7,
+        title: 'New Zealand',
+        CarrouselImage: '/carrousel-pictures/nz-landscape.jpg',
+        link: 'https://www.google.com',
+        year: '2021',
+        mode: 'landscape',
+      },
+      {
+        id: 8,
+        title: 'Work',
+        CarrouselImage: '/carrousel-pictures/seaside-japan.jpg',
+        link: 'https://www.google.com',
+        year: '2021',
+        mode: 'portrait',
+      }
 ]
+
+export default imageData;
