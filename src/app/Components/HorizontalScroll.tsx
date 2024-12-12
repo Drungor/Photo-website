@@ -1,26 +1,31 @@
 'use client';
 
-import { motion, useScroll,useSpring } from "motion/react";
+import { motion, useScroll, useSpring} from "motion/react";
+
 
 
 const HorizontalScroll = () => {
-    const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll();
+  
   const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
+    stiffness: 400,
+    damping: 40,
     restDelta: 0.001
-  });
+  })
+
 
   return (
-    <div className="relative w-40 h-2 rounded-md bg-primary opacity-50">
-      {/* Barre de progression */}
-        <motion.div
-            className="absolute h-full bg-impact opacity-100 rounded-md origin-left"
-            style={{ scaleX }}
-        >
-        </motion.div>
-    </div>
+        
+
+              <motion.div className="fixed bottom-20 left-40 w-1/5 h-2 origin-bottom-left rounded-md bg-primary opacity-80">
+                <motion.div
+                    className="fixed bottom-20 left-40 w-1/5 h-2 origin-bottom-left rounded-md bg-impact "
+                    style={{ scaleX}}
+                    >
+                </motion.div>
+              </motion.div>
   );
 }
 
 export default HorizontalScroll;
+
