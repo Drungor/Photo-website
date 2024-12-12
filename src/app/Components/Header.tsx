@@ -9,7 +9,7 @@ const Header: React.FC<HeaderProps> = ({className}) => {
     <header className={className}>
         <section className="flex relative justify-end mt-16 mb-12 " >
             <h1 className="absolute left-0 top-0 text-3xl ">レオ</h1>
-            <div>
+            <div className=''>
                 <NavBar />
             </div>
         </section>

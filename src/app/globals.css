@@ -30,4 +30,10 @@ body {
 
 html {
   font-family: var(--font-noto-serif-jp);
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }

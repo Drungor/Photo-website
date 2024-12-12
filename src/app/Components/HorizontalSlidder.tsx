@@ -43,7 +43,7 @@ return (
           style={{ height: `${sectionHeight}vh` }}
         >
           <div className="sticky top-60 flex items-center overflow-hidden">
-            <motion.div style={{ x }} className="flex gap-12">
+            <motion.div style={{ x }} className="flex gap-12 ">
               {imageData.map((item) => (
                 <Card
                   mode={item.mode}

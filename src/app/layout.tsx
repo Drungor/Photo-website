@@ -32,7 +32,7 @@ export default function RootLayout({
         </style>
       </head>
       <body className="mx-20 relative">
-      <Header className="sticky top-16" />
+      <Header className="sticky top-16 z-50" />
         {children}
       <Footer />
       </body>
