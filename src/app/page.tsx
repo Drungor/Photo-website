@@ -14,7 +14,7 @@ export default function Home() {
         <h1 className="fixed text-2xl font-normal tracking-widest">
           RECENT WORK
         </h1>
-        <HorizontalSlidder className="capitalize">
+        <HorizontalSlidder>
           {imageData.map((item) => (
                 <Card
                   mode={item.mode}
