@@ -1,15 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface CardProps {
-    id: number;
-    title: string;
-    image: string;
+    id?: number;
+    title?: string;
+    image?: string;
     link?: string;
-    year: string;
-    mode: string;
+    year?: string;
+    mode?: string;
 }
 
-const Card: React.FC<CardProps> = ({ id, title, image, year, mode}) => {
+const Card: React.FC<CardProps> = ({id, title, image, year, mode}) => {
     const width = mode === 'portrait' ? 355 : 800;
 
     return (
@@ -18,12 +19,13 @@ const Card: React.FC<CardProps> = ({ id, title, image, year, mode}) => {
         style={{
             height: 600,
             width:width}}>
+        <Link href={`${title}`}>
             <div className="mb-4">
                 <Image
                     height={500}
                     width={width}
-                    src={image}
-                    alt={title}
+                    src={image || ''}
+                    alt={title || 'Image'}
                     className="rounded-md"
                     loading="lazy"
                 />
@@ -41,6 +43,7 @@ const Card: React.FC<CardProps> = ({ id, title, image, year, mode}) => {
                     <p>{year}</p>
                 </div>
             </div>
+         </Link>
         </section>
     );
 };

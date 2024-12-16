@@ -2,11 +2,17 @@
 
 import { motion, useTransform, useScroll } from 'motion/react';
 import { useRef, useLayoutEffect, useState } from 'react';
-import Card from '../Components/Card';
 import imageData from '../data/project.js';
 
 
-const HorizontalSlidder = () => {
+interface HorizontalSlidderProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+
+
+const HorizontalSlidder = ({children}:HorizontalSlidderProps) => {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const [containerWidth, setContainerWidth] = useState(0);
@@ -42,18 +48,9 @@ return (
           className="relative"
           style={{ height: `${sectionHeight}vh` }}
         >
-          <div className="sticky top-60 flex items-center overflow-hidden">
-            <motion.div style={{ x }} className="flex gap-12 ">
-              {imageData.map((item) => (
-                <Card
-                  mode={item.mode}
-                  key={item.id}
-                  title={item.title}
-                  id={item.id}
-                  image={item.CarrouselImage}
-                  year={item.year}
-                />
-              ))}
+          <div className="sticky top-52 flex items-center overflow-hidden">
+            <motion.div style={{ x }} className="flex gap-12 "> 
+              {children}
             </motion.div>
           </div>
         </section>

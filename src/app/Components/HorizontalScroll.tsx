@@ -15,11 +15,9 @@ const HorizontalScroll = () => {
 
 
   return (
-        
-
-              <motion.div className="fixed bottom-20 left-40 w-1/5 h-2 origin-bottom-left rounded-md bg-primary opacity-80">
+              <motion.div className="fixed bottom-10 left-40 w-1/5 h-2 origin-bottom-left rounded-md bg-primary opacity-80">
                 <motion.div
-                    className="fixed bottom-20 left-40 w-1/5 h-2 origin-bottom-left rounded-md bg-impact "
+                    className="fixed bottom-10 left-40 w-1/5 h-2 origin-bottom-left rounded-md bg-impact "
                     style={{ scaleX}}
                     >
                 </motion.div>
