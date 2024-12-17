@@ -1,4 +1,7 @@
+'use client';
+
 import Image  from "next/image";
+import {useState , useEffect} from "react";
 
 interface CardGalleryProps {
     id: number;
@@ -8,8 +11,11 @@ interface CardGalleryProps {
     alt?: string;
 }
 
+
+
 const CardGallery: React.FC<CardGalleryProps> = ({id,modeP,title,src,alt}) => {
     const width = modeP === 'portrait' ? 355 : 800;
+
     
     return (
         <section className="flex flex-row"

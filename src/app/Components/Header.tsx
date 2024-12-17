@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             transition={isLargeScreen ? {} : { duration: 0.40, ease: "easeInOut" }}
             className="sticky top-0 flex w-full md:top-16  z-50 bg-background md:bg-transparent"
         >
-            <section className="flex items-center mt-5 mx-4 pt-4 pb-2 md:mt-0 md:mx-0 md:p-0 justify-between w-full">
+            <section className="flex items-center  p-4 md:mt-0 md:mx-0 md:p-0 justify-between w-full">
                 <h1 className="text-2xl md:text-3xl font-semibold ">
                     <a  href="/">レオ</a>
                 </h1>
