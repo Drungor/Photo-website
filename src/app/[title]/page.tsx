@@ -25,8 +25,8 @@ export default function Gallery() {
 
   return (
     <>
-      <main className="ml-20">
-        <h1 className="fixed text-2xl font-normal tracking-widest uppercase">
+      <main className="mx-4 md:ml-20 relative">
+        <h1 className="my-8 md:sticky md:top-32 text-2xl font-normal tracking-widest">
           {parent.title}
         </h1>
         <GallerySlider gallery={parent.gallery}>

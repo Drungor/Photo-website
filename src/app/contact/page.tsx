@@ -7,13 +7,13 @@ const bottomSpacingCss = "mb-2";
     return (
         <>
             <main>
-                <section className="md:ml-20">
+                <section className="mx-4 md:ml-20 relative">
                     <div>
-                    <h1 className=" md:text-2xl font-normal tracking-widest mb-10">
+                    <h1 className=" my-8 md:sticky md:top-32 text-2xl font-normal tracking-widest">
                         ABOUT ME
                     </h1>
                     </div>
-                        <div className="text-justify md:text-left text-secondary font-medium md:text-lg md:text-xl tracking-widest">
+                        <div className="text-justify md:text-left text-secondary font-medium text-lg md:text-xl tracking-widest mb-8 md:mb-0">
                             <p className={bottomSpacingCss}>こんにちは、 メタと申します。<br/>2021年から日本（福岡）に移住したフランス人です。</p>
                             <p className={bottomSpacingCss}>小学校時代から写真に情熱を持ち、15歳の時に写真撮影を始めました。</p>
                             <p className={bottomSpacingCss}>少しですが世界を旅する機会もあり、自分の作品を投稿するのは良い考えだと思い、このページを作成しました。</p>

@@ -10,8 +10,8 @@ export default function Home() {
 
   return (
     <>
-      <main className="ml-20 ">
-        <h1 className="fixed text-2xl font-normal tracking-widest">
+      <main className="md:mx-0 mx-4 md:ml-20 relative">
+        <h1 className="my-8 md:sticky md:top-32 text-2xl font-normal tracking-widest">
           RECENT WORK
         </h1>
         <HorizontalSlidder>

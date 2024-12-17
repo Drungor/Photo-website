@@ -14,12 +14,12 @@ const NavBar = () => {
     return (
         <nav>
             <div>
-                <ul className="flex gap-4 p-2 pr-0 font-bold tracking-widest">
+                <ul className="flex gap-4  font-bold tracking-widest text-xl md:text-2xl h-auto">
                     {navItems.map((item) => (
                         <li key={item.label}>
-                            <a
+                            <a 
                                 href={item.path}
-                                className={pathname === item.path ? 'text-typo' : 'text-secondary'}
+                                className={pathname === item.path ? 'text-typo h-full' : 'text-secondary'}
                             >
                                 {item.label}
                             </a>
