@@ -26,13 +26,13 @@ export default function RootLayout({
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{metadata.title}</title> 
+        <meta name="description" content={metadata.description} />
         <style>
           writing-mode: horizontal-tb; 
         </style>
       </head>
-      <body className="mx-20 relative">
-      <Header className="sticky top-16 z-50" />
+      <body className="  md:mx-20 relative">
+      <Header />
         {children}
       <Footer />
       </body>

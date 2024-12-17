@@ -7,14 +7,13 @@ const NavBar = () => {
     const pathname = usePathname();
 
     const navItems = [
-        { label: 'ワークス', path: '/' },
-        { label: 'ショップ', path: '/shop' },
-        { label: 'コンタクト', path: '/contact' },
+        { label: 'HOME', path: '/' },
+        { label: 'CONTACT', path: '/contact' },
     ];
 
     return (
         <nav>
-            <div className='top-0 right-0'>
+            <div>
                 <ul className="flex gap-4 p-2 pr-0 font-bold tracking-widest">
                     {navItems.map((item) => (
                         <li key={item.label}>
