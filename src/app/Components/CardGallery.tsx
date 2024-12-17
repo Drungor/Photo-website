@@ -1,7 +1,6 @@
 'use client';
 
-import Image  from "next/image";
-import {useState , useEffect} from "react";
+import Image from "next/image";
 
 interface CardGalleryProps {
     id: number;
@@ -11,26 +10,25 @@ interface CardGalleryProps {
     alt?: string;
 }
 
+const CardGallery: React.FC<CardGalleryProps> = ({ id, modeP, title, src, alt }) => {
+    const defaultWidth = modeP === 'portrait' ? 355 : 800; // Largeur par défaut pour md et supérieur
 
+    // Détermine la largeur en fonction de l'écran
+    const imageWidth = typeof window !== "undefined" && window.innerWidth < 768 ? 355 : defaultWidth;
 
-const CardGallery: React.FC<CardGalleryProps> = ({id,modeP,title,src,alt}) => {
-    const width = modeP === 'portrait' ? 355 : 800;
-
-    
     return (
-        <section className="flex flex-row"
-            style = {{width: width}}>
-                <Image
+        <section className="flex flex-row rounded-md" style={{ width: imageWidth }}>
+            <Image
                 key={id}
                 height={500}
-                width={width}
+                width={imageWidth} // Largeur dynamique ici
                 src={src}
                 alt={title || 'Image'}
-                className="rounded-md object-fit"
+                className="rounded-md object-cover"
                 loading="lazy"
-                />
+            />
         </section>
     );
-}
+};
 
 export default CardGallery;

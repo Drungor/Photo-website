@@ -50,7 +50,6 @@ const GallerySlider = ({ gallery, children }: GallerysliderProps) => {
     setSectionHeight(calculatedHeight > 100 ? calculatedHeight : 100); // Minimum 100vh
   }, [isMobile]);
 
-
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, [0, 1], [0, -containerWidth]);
 
@@ -61,7 +60,9 @@ const GallerySlider = ({ gallery, children }: GallerysliderProps) => {
     style={isMobile ? {} : { height: `${sectionHeight}vh` }}
     >
        {isMobile ? (
-        <div className="flex flex-col gap-6 items-center">
+        <div 
+        className="flex flex-col gap-6 items-center "
+        >
           {children}
         </div>
       ) : (
