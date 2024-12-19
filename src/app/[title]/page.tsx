@@ -7,7 +7,6 @@ import imageData from "../data/project";
 
 
 
-
 export default function Gallery() {
 
   const pathname = usePathname(); 
@@ -30,15 +29,15 @@ export default function Gallery() {
           {parent.title}
         </h1>
         <GallerySlider gallery={parent.gallery}>
-          {parent.gallery.map((item) => (
-            <CardGallery 
-              key={item.id} 
-              id={item.id}
-              src={item.src}
-              alt={item.title}
-              modeP={item.mode}
-            />
-          ))}
+            {parent.gallery.map((item) => (
+                <CardGallery
+                  key={item.id}
+                  id={item.id}
+                  src={item.src}
+                  alt={item.title}
+                  modeP={item.mode}
+                />
+            ))}
         </GallerySlider>
       </main>
     </>

@@ -23,6 +23,7 @@ const GallerySlider = ({ gallery, children }: GallerysliderProps) => {
   const gap = 48;
   const ratio = 0.1;
 
+
   //responsive detection
     useEffect(() => {
       const checkIsMobile = () => {
