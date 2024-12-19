@@ -1,8 +1,8 @@
 'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 interface CardProps {
     id?: number;
@@ -14,14 +14,17 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ id, title, image, year, mode }) => {
-    const [dimensions, setDimensions] = useState({ 
-        width: 355, 
-        height: 236,
-        isMobile: false,
-        heightOfSection: 600,
+    const [dimensions, setDimensions] = useState(() => {
+        const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+        const width = isMobile ? 355 : mode === 'portrait' ? 355 : 800;
+        const height = isMobile && mode === 'portrait' ? 236 : 600;
+        const heightOfSection = isMobile && mode === 'landscape' ? 300 : 600;
+        return { width, height, isMobile, heightOfSection };
     });
 
     useEffect(() => {
+        if (typeof window === 'undefined') return;
+
         const calculateDimensions = () => {
             const width = mode === 'portrait' ? 355 : 800;
             const heightOfPicture = 600;
@@ -34,13 +37,9 @@ const Card: React.FC<CardProps> = ({ id, title, image, year, mode }) => {
             });
         };
 
-        // Initial calculation
         calculateDimensions();
-
-        // Add event listener for window resize
         window.addEventListener('resize', calculateDimensions);
 
-        // Cleanup event listener on unmount
         return () => {
             window.removeEventListener('resize', calculateDimensions);
         };
@@ -48,7 +47,7 @@ const Card: React.FC<CardProps> = ({ id, title, image, year, mode }) => {
 
     return (
         <section
-            className=""
+            className="card-container relative flex flex-col"
             style={{
                 height: dimensions.heightOfSection,
                 width: dimensions.width,
@@ -62,6 +61,7 @@ const Card: React.FC<CardProps> = ({ id, title, image, year, mode }) => {
                         src={image || ''}
                         alt={title || 'Image'}
                         className="rounded-md"
+                        layout="intrinsic"
                         loading="lazy"
                     />
                 </div>
