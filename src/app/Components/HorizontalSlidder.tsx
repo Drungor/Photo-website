@@ -31,14 +31,14 @@ const HorizontalSlidder = ({ children }: HorizontalSlidderProps) => {
     if (isMobile) return; 
 
     const totalWidth = imageData.reduce((acc, item, index) => {
-      const cardWidth = item.mode === "portrait" ? 355 : 800;
+      const cardWidth = item.mode === "portrait" ? 416 : 1152;
       return acc + cardWidth + (index === imageData.length - 1 ? 0 : gap);
     }, 0);
 
     const adjustedWidth = totalWidth - window.innerWidth;
 
     const lastCardWidth =
-      imageData[imageData.length - 1]?.mode === "portrait" ? 355 : 800;
+      imageData[imageData.length - 1]?.mode === "portrait" ? 416 : 1152;
     setContainerWidth(
       adjustedWidth + lastCardWidth > 0 ? adjustedWidth + lastCardWidth : 0
     );
@@ -59,12 +59,12 @@ const HorizontalSlidder = ({ children }: HorizontalSlidderProps) => {
       style={isMobile ? {} : { height: `${sectionHeight}vh` }}
     >
       {isMobile ? (
-        <div className="flex flex-col gap-6 items-center">
+        <div className="flex flex-col gap-6 items-center h-auto">
           {children}
         </div>
       ) : (
         <div className="sticky top-52 flex items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex gap-12">
+          <motion.div style={{ x }} className="flex gap-12 h-[70vh] ">
             {children}
           </motion.div>
         </div>

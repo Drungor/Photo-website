@@ -37,13 +37,13 @@ const GallerySlider = ({ gallery, children }: GallerysliderProps) => {
     if (isMobile) return; 
 
     const totalWidth = gallery.reduce((acc, item, index) => {
-      const cardWidth = item.mode === "portrait" ? 355 : 800;
+      const cardWidth = item.mode === "portrait" ? 416 : 1152;
       return acc + cardWidth + (index === gallery.length - 1 ? 0 : gap);
     }, 0);
 
     const adjustedWidth = totalWidth - window.innerWidth;
 
-    const lastCardWidth = gallery[gallery.length - 1]?.mode === "portrait" ? 355 : 800;
+    const lastCardWidth = gallery[gallery.length - 1]?.mode === "portrait" ? 416 : 1152;
     setContainerWidth(adjustedWidth + lastCardWidth > 0 ? adjustedWidth + lastCardWidth : 0);
 
     const calculatedHeight = Math.ceil((adjustedWidth + window.innerWidth + lastCardWidth) * ratio);
@@ -67,7 +67,7 @@ const GallerySlider = ({ gallery, children }: GallerysliderProps) => {
         </div>
       ) : (
         <div className="sticky top-52 flex items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex gap-12">
+          <motion.div style={{ x }} className="flex gap-12 h-[70vh]">
             {children}
           </motion.div>
         </div>

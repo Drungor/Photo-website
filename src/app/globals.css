@@ -26,12 +26,14 @@ body {
   background: var(--background);
   writing-mode: horizontal-tb;
   font-family: var(--font-noto-serif-jp);
+  scroll-behavior: smooth;
 }
 
 html {
   font-family: var(--font-noto-serif-jp);
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {
