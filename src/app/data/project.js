@@ -13,8 +13,6 @@
 //             mode: '',
 //           },
 
-import { g } from "motion/react-client";
-
  
  const imageData = [
     {
