@@ -216,7 +216,7 @@
     },
     {
       id: 5,
-      title: 'Fukuoka inner',
+      title: 'Fukuoka',
       CarrouselImage: '/carrousel-pictures/fukuoka.jpg',
       year: '2024',
       mode: 'portrait',
