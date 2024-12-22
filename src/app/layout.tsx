@@ -20,7 +20,7 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Follow me on my journey to make greater pictures." />
-        <title>Leo's Photo</title>
+        <title>Leo&apos;s Photo</title>
         <style>
           writing-mode: horizontal-tb;
         </style>
