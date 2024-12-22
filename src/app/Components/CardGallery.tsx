@@ -10,7 +10,7 @@ interface CardGalleryProps {
     alt?: string;
 }
 
-const CardGallery: React.FC<CardGalleryProps> = ({ id, modeP, title, src,alt}) => {
+const CardGallery: React.FC<CardGalleryProps> = ({ id, modeP, title, src}) => {
 
     return (
         <div
