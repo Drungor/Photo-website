@@ -168,7 +168,7 @@
     {
       id: 4,
       title: 'Countryside',
-      CarrouselImage: '/carrousel-pictures/Countryside.jpg',
+      CarrouselImage: '/carrousel-pictures/countryside.jpg',
       year: 'oct 2024',
       mode: 'portrait',
       gallery: [{
