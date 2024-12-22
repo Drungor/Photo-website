@@ -17,7 +17,7 @@ export default function Gallery() {
   if (!parent) {
     return (
       <div className="text-center text-gray-500 mt-10">
-        <p>Not found "{title}"</p>
+        <p>Not found &quot;{title}&quot;</p>
       </div>
     );
   }
