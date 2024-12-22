@@ -3,6 +3,7 @@
 import NavBar from './NavBar';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 interface HeaderProps {
     className?: string;
@@ -50,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
         >
             <section className="flex items-center  p-4 md:mt-0 md:mx-0 md:p-0 justify-between w-full">
                 <h1 className="text-2xl md:text-3xl font-semibold ">
-                    <a  href="/">レオ</a>
+                    <Link  href="/">レオ</Link>
                 </h1>
                 <NavBar />
             </section>
