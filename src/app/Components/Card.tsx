@@ -11,7 +11,6 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ id, title, image, year, mode }) => {
-const classModePortrait = "w-";
 
     return (
             <Link 
