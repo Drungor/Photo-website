@@ -55,20 +55,18 @@ const HorizontalSlidder = ({ children }: HorizontalSlidderProps) => {
   return (
     <section
       ref={targetRef}
-      className={`relative ${isMobile ? "h-auto" : ""}`}
+      className={`relative 
+        ${isMobile ? "h-auto" : ""}`}
       style={isMobile ? {} : { height: `${sectionHeight}vh` }}
     >
-      {isMobile ? (
-        <div className="flex flex-col gap-6 items-center h-auto">
+        <div className="flex flex-col gap-6 items-center h-auto md:hidden ">
           {children}
         </div>
-      ) : (
-        <div className="sticky top-52 flex items-center overflow-hidden">
+        <div className="sticky top-52 items-center overflow-hidden  hidden md:block">
           <motion.div style={{ x }} className="flex gap-12 h-[70vh] ">
             {children}
           </motion.div>
         </div>
-      )}
     </section>
   );
 };

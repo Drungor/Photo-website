@@ -14,7 +14,7 @@ const CardGallery: React.FC<CardGalleryProps> = ({ id, modeP, title, src}) => {
     return (
         <div
             className={`${
-            modeP === 'portrait' ? 'h-160 w-full lg:w-104 lg:h-full ' : 'h-56 w-full lg:h-full  lg:w-288'
+            modeP === 'portrait' ? 'h-160 w-full md:w-104 md:h-full ' : 'h-56 w-full md:h-full  md:w-288'
         }`}>
             <div className="relative w-full h-full">
                 <Image
