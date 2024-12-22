@@ -1,6 +1,5 @@
 "use client";
 
-import {useState, useEffect, useLayoutEffect} from 'react';
 import HorizontalScroll from './HorizontalScroll';
 import { usePathname } from 'next/navigation';
 

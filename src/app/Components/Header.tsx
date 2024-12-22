@@ -8,7 +8,7 @@ interface HeaderProps {
     className?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ className }) => {
+const Header: React.FC<HeaderProps> = ({}) => {
     const { scrollY } = useScroll();
     const [hidden, setHidden] = useState(false);
     const [isLargeScreen, setIsLargeScreen] = useState(false);
