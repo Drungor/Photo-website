@@ -49,23 +49,27 @@ const HorizontalSlidder = ({ children }: HorizontalSlidderProps) => {
   const x = useTransform(scrollYProgress, [0, 1], [0, -containerWidth]);
 
   return (
-    <section
-      ref={targetRef}
-      className="relative flex flex-col md:h-[100vh]"
-      style={{ height: `${sectionHeight}vh`, minHeight: '100vh' }}
-    >
-      <div className="sticky top-52 overflow-hidden hidden md:flex">
-        <motion.div
-          style={{ x }}
-          className="flex gap-12 h-[70vh] will-change-transform"
+    <>
+      <section 
+        ref={targetRef}
+        className="relative flex-col md:h-[100vh] hidden md:flex "
+        style={{ height: `${sectionHeight}vh`, minHeight: '100vh' }}
         >
-          {children}
-        </motion.div>
-      </div>
-      <div  className="flex flex-col gap-6 items-center h-auto md:hidden" style={{ paddingBottom: '2rem' }}>
-        {children}
-      </div>
-    </section>
+        <div className="sticky top-52 overflow-hidden hidden md:flex">
+          <motion.div
+            style={{ x }}
+            className="flex gap-12 h-[70vh] will-change-transform"
+            >
+            {children}
+          </motion.div>
+        </div>
+      </section>
+        <section>
+          <div  className="flex flex-col gap-6 items-center h-auto md:hidden" style={{ paddingBottom: '2rem' }}>
+            {children}
+          </div>
+        </section>
+    </>
   );
 };
 
