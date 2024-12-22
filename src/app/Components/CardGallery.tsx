@@ -7,9 +7,10 @@ interface CardGalleryProps {
     modeP: string;
     src: string;
     title?: string;
+    alt?: string;
 }
 
-const CardGallery: React.FC<CardGalleryProps> = ({ id, modeP, title, src}) => {
+const CardGallery: React.FC<CardGalleryProps> = ({ id, modeP, title, src,alt}) => {
 
     return (
         <div
