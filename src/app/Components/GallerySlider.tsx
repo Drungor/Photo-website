@@ -60,12 +60,9 @@ const GallerySlider = ({ gallery, children }: GallerySliderProps) => {
       className="relative flex flex-col md:h-[100vh]"
       style={{ height: `${sectionHeight}vh` }}
     >
-      {/* Mobile layout */}
       <div className="flex flex-col gap-6 items-center h-auto md:hidden">
         {children}
       </div>
-
-      {/* Desktop layout */}
       <div className="sticky top-52 overflow-hidden hidden md:flex">
         <motion.div
           style={{ x }}

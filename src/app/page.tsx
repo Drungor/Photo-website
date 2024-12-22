@@ -2,18 +2,16 @@ import HorizontalSlidder from './Components/HorizontalSlidder';
 import Card from './Components/Card';
 import imageData from './data/project.js';
 
-
-
-
-
 export default function Home() {
 
   return (
     <>
       <main className="md:mx-0 mx-4 md:ml-20 relative">
-        <h1 className="my-8 md:sticky md:top-32 text-2xl font-normal tracking-widest">
+      <div className=" md:sticky md:top-32">
+        <h1 className="my-8  text-2xl font-normal tracking-widest">
           RECENT WORK
         </h1>
+      </div>
         <HorizontalSlidder>
           {imageData.map((item) => (
                 <Card

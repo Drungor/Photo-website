@@ -52,11 +52,8 @@ const HorizontalSlidder = ({ children }: HorizontalSlidderProps) => {
     <section
       ref={targetRef}
       className="relative flex flex-col md:h-[100vh]"
-      style={{ height: `${sectionHeight}vh` }}
+      style={{ height: `${sectionHeight}vh`, minHeight: '100vh' }}
     >
-      <div className="flex flex-col gap-6 items-center h-auto md:hidden">
-        {children}
-      </div>
       <div className="sticky top-52 overflow-hidden hidden md:flex">
         <motion.div
           style={{ x }}
@@ -64,6 +61,9 @@ const HorizontalSlidder = ({ children }: HorizontalSlidderProps) => {
         >
           {children}
         </motion.div>
+      </div>
+      <div  className="flex flex-col gap-6 items-center h-auto md:hidden" style={{ paddingBottom: '2rem' }}>
+        {children}
       </div>
     </section>
   );

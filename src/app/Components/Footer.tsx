@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
 
 
     return (
-        <footer>
+        <footer className='relative mt-10 bg-slate-700'>
             {!isContactPage && <HorizontalScroll />}
             <div className="opacity-75 m-4  md:m-0 md:fixed bottom-10 right-20 md:opacity-100">
                 <div className="flex justify-end text-secondary font-medium tracking-widest ">
