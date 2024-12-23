@@ -38,7 +38,7 @@ const GallerySlider = ({ gallery, children }: GallerySliderProps) => {
 
       const calculatedHeight =
         (adjustedWidth + window.innerWidth + lastCardWidth) * 0.1;
-      setSectionHeight(calculatedHeight > 100 ? calculatedHeight : 100); // Minimum 100vh
+      setSectionHeight(calculatedHeight > 100 ? calculatedHeight : 100); 
     };
 
     calculateDimensions();
@@ -55,23 +55,27 @@ const GallerySlider = ({ gallery, children }: GallerySliderProps) => {
   const x = useTransform(scrollYProgress, [0, 1], [0, -containerWidth]);
 
   return (
-    <section
-      ref={targetRef}
-      className="relative flex flex-col md:h-[100vh]"
-      style={{ height: `${sectionHeight}vh` }}
-    >
-      <div className="flex flex-col gap-6 items-center h-auto md:hidden">
-        {children}
-      </div>
-      <div className="sticky top-52 overflow-hidden hidden md:flex">
-        <motion.div
-          style={{ x }}
-          className="flex gap-12 h-[70vh] will-change-transform"
+    <>
+      <section
+        ref={targetRef}
+        className="relative flex-col md:h-[100vh] hidden md:flex"
+        style={{ height: `${sectionHeight}vh` }}
         >
-          {children}
-        </motion.div>
-      </div>
-    </section>
+        <div className="sticky top-52 overflow-hidden">
+          <motion.div
+            style={{ x }}
+            className="flex gap-12 h-[70vh] will-change-transform"
+            >
+            {children}
+          </motion.div>
+        </div>
+      </section>
+        <section>
+          <div className="flex flex-col gap-6 items-center h-auto md:hidden">
+            {children}
+          </div>
+        </section>
+    </>
   );
 };
 
