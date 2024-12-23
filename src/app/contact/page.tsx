@@ -17,7 +17,7 @@ const bottomSpacingCss = "mb-2";
                         </h1>
                     </div>
                     <div className="text-justify md:text-left text-secondary font-medium text-lg md:text-xl tracking-widest mb-8 md:mb-0 md:mt-32">
-                        <p className={bottomSpacingCss}>こんにちは、 メタと申します。<br/>2021年から日(（福岡)に移住したフランス人です。</p>
+                        <p className={bottomSpacingCss}>こんにちは、 メタと申します。<br/>2021年から日本(（福岡)に移住したフランス人です。</p>
                         <p className={bottomSpacingCss}>小学校時代から写真に興味を持ち始めたら、15歳の時に写真撮影を始めました。</p>
                         <p className={bottomSpacingCss}>少しですが世界を旅する機会もあり、自分の作品を投稿するのは良い考えだと思い、このページを作成しました。</p>
                         <p className={bottomSpacingCss}>自分が見たものを共有し、好きなものを広める手段として使って行きたいと考えています。</p>
