@@ -10,8 +10,10 @@ interface IntroOverlayProps {
 }
 
 const IntroOverlay = ({whileTap}:IntroOverlayProps) => {
-    // const [isClicked, setIsClicked] = useState(false);
-    const [isFirstVisit, setIsFirstVisit] = useState(true);
+    const [isFirstVisit, setIsFirstVisit] = useState(() => {
+        const hasVisited = localStorage.getItem('isFirstVisit');
+        return !hasVisited;
+      });
 
 
     useEffect(() => {
@@ -23,15 +25,13 @@ const IntroOverlay = ({whileTap}:IntroOverlayProps) => {
       }, []);
     
       const handleClick = () => {
-        // setIsClicked(true);
         setIsFirstVisit(false);
     console.log("clicked");
     };
 
   return (
     <AnimatePresence>
-         {/* {!isClicked && !isFirstVisit && ( */}
-            {!isFirstVisit && (
+        { isFirstVisit && ( 
         <motion.div 
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
