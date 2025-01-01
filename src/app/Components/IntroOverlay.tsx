@@ -1,7 +1,7 @@
 "use client";
 import { easeInOut } from "motion";
 import { motion, AnimatePresence } from "motion/react";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 
 
@@ -10,17 +10,28 @@ interface IntroOverlayProps {
 }
 
 const IntroOverlay = ({whileTap}:IntroOverlayProps) => {
-    const [isClicked, setIsClicked] = useState(false);
-    const handleClick = () => {
-        setIsClicked(true);
+    // const [isClicked, setIsClicked] = useState(false);
+    const [isFirstVisit, setIsFirstVisit] = useState(true);
+
+
+    useEffect(() => {
+        const hasVisited = localStorage.getItem('isFirstVisit');
+        if (!hasVisited) {
+          setIsFirstVisit(true);
+          localStorage.setItem('isFirstVisit', 'true');
+        }
+      }, []);
+    
+      const handleClick = () => {
+        // setIsClicked(true);
+        setIsFirstVisit(false);
     console.log("clicked");
     };
 
-
-
   return (
     <AnimatePresence>
-         {!isClicked && (
+         {/* {!isClicked && !isFirstVisit && ( */}
+            {!isFirstVisit && (
         <motion.div 
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
