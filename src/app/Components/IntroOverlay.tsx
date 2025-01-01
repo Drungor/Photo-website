@@ -9,25 +9,22 @@ interface IntroOverlayProps {
     whileTap?: {scale:number};
 }
 
-const IntroOverlay = ({whileTap}:IntroOverlayProps) => {
-    const [isFirstVisit, setIsFirstVisit] = useState(() => {
-        const hasVisited = localStorage.getItem('isFirstVisit');
-        return !hasVisited;
-      });
+const IntroOverlay = ({ whileTap }: IntroOverlayProps) => {
+  const [isFirstVisit, setIsFirstVisit] = useState(() => {
+    const hasVisited = localStorage.getItem("isFirstVisit");
+    return !hasVisited; // if hasVisited is null, return true
+  });
 
+  useEffect(() => {
+    if (isFirstVisit) {
+      localStorage.setItem("isFirstVisit", "true");
+    }
+  }, [isFirstVisit]);
 
-    useEffect(() => {
-        const hasVisited = localStorage.getItem('isFirstVisit');
-        if (!hasVisited) {
-          setIsFirstVisit(true);
-          localStorage.setItem('isFirstVisit', 'true');
-        }
-      }, []);
-    
-      const handleClick = () => {
-        setIsFirstVisit(false);
+  const handleClick = () => {
+    setIsFirstVisit(false);
     console.log("clicked");
-    };
+  };
 
   return (
     <AnimatePresence>
