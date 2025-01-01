@@ -61,7 +61,7 @@ const GallerySlider = ({ gallery, children }: GallerySliderProps) => {
         className="relative flex-col md:h-[100vh] hidden md:flex"
         style={{ height: `${sectionHeight}vh` }}
         >
-        <div className="sticky top-52 overflow-hidden">
+        <div className="sticky top-52 overflow-hidden hidden md:flex">
           <motion.div
             style={{ x }}
             className="flex gap-12 h-[70vh] will-change-transform"
